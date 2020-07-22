@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -40,9 +41,8 @@ public class Game implements Cloneable {
 		return g;
 	}
 
-	public Game(String filename) throws FileNotFoundException, IOException {
-		File file = new File(filename);
-		BufferedReader br = new BufferedReader(new FileReader(file));
+	public Game(String input) throws IOException {
+		BufferedReader br = new BufferedReader(new StringReader(input));
 		long p_pow = 1;
 		hash = 0l;
 		ArrayList<Integer> Counters = new ArrayList<>();
@@ -107,8 +107,8 @@ public class Game implements Cloneable {
 		// hashing variables
 		long p_pow = 1;
 
-		// remove the moving charcter from the hash
-		// p_pow ^ index of the charcter
+		// remove the moving character from the hash
+		// p_pow ^ index of the character
 		for (int i = 0; i < s * 4 + tubes.get(s).size(); i++) {
 			p_pow = (p_pow * p) % m;
 		}
