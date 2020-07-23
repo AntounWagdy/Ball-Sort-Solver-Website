@@ -39,12 +39,15 @@ public class CheckGame extends HttpServlet {
 			}
 		} else if (game.equals("")) {
 			try {
-				if(g.isEnd()) {
+				if (g.isEnd()) {
 					response.getWriter().write("");
 					return;
 				}
 				ArrayList<Pair<Integer, Integer>> res = Solver.iteration_solve_with_heuristic(g);
 				response.getWriter().write(res.toString());
+				for (Pair<Integer, Integer> p : res) {
+					g.makeMove(p.getKey(), p.getValue());
+				}
 			} catch (CloneNotSupportedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
