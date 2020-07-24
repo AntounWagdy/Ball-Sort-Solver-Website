@@ -287,7 +287,7 @@ function getBallInto(tubeIndex, color) {
 }
 
 
-function moveBallToPoint(ball, x, y, j) {
+function moveBallToPoint(ball, x, y, j,newPos) {
 	if (Math.abs(ball.translation.x - x) > 7 || Math.abs(ball.translation.y - y) > 7) {
 		if (Math.abs(ball.translation.x - x) > 7)
 			ball.translation.x = ball.translation.x - (Math.sign(ball.translation.x - x) * 7)
@@ -295,26 +295,26 @@ function moveBallToPoint(ball, x, y, j) {
 			ball.translation.y = ball.translation.y - (Math.sign(ball.translation.y - y) * 7)
 		two.update();
 		requestAnimationFrame(function() {
-			moveBallToPoint(ball, x, y, j);
+			moveBallToPoint(ball, x, y, j,newPos);
 		});
 	}
 	else {
 		ball.translation.x = x;
 		ball.translation.y = y;
-		moveBallVerticalDown(ball, ball.translation.y, tubesBalls[j].length - 1);
+		moveBallVerticalDown(ball, ball.translation.y, newPos);
 	}
 }
 
-function moveBallVerticalUp(ball, initiateposition, position, j) {
+function moveBallVerticalUp(ball, initiateposition, position, j,newPos) {
 	if (-1 * (ball.translation.y - initiateposition) < ((4 - position) * 2 * ballDiameter)) {
 		ball.translation.set(ball.translation.x, ball.translation.y - 7)
 		two.update();
 		requestAnimationFrame(function() {
-			moveBallVerticalUp(ball, initiateposition, position, j);
+			moveBallVerticalUp(ball, initiateposition, position, j,newPos);
 		});
 	} else {
 		moveBallToPoint(ball, tubesArray[j].getBoundingClientRect().left + ballDiameter + 2
-			, tubesArray[j].getBoundingClientRect().top - ballDiameter, j);
+			, tubesArray[j].getBoundingClientRect().top - ballDiameter, j,newPos);
 	}
 }
 
@@ -337,7 +337,8 @@ function canMove(i, j) {
 function moveBall(i, j) {
 	var ball = tubesBalls[i].pop();
 	tubesBalls[j].push(ball);
-	moveBallVerticalUp(ball, ball.translation.y, tubesBalls[i].length, j);
+	var pos = tubesBalls[i].length;
+	moveBallVerticalUp(ball, ball.translation.y, pos, j,tubesBalls[j].length-1);
 }
 
 function clickTubes(index) {
@@ -450,7 +451,7 @@ function askingToSolve() {
 		if(indexOfMove >= sol.length){
 			clearInterval(id);
 		}
-	},5000);
+	},300);
 	
 	return;
 
