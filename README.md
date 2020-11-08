@@ -1,13 +1,11 @@
 # Ball-Sort-Solver-Website
-Ball-Sort-Puzzle-Solver is a java based website to find and analyse solutions for the game known as **"Ball Sort Puzzle"**. You may test the game play at [Google Play Store]([https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle](https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle)). This website depends on an algorithm from [my repository]([https://github.com/AntounWagdy/Ball-Sort-Puzzle-Solver]) which analyzes the different algorithm solution for this game.
+Ball-Sort-Puzzle-Solver is a java based website to find and analyse solutions for the game known as **"Ball Sort Puzzle"**. You may test the game play at [Google Play Store]([https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle](https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle)). This website depends on an algorithm from [my repository](https://github.com/AntounWagdy/Ball-Sort-Puzzle-Solver) which analyzes the different algorithm solution for this game.
 
 ## Getting started
 This website is built as google cloud platform application. To use it you need an acess to google cloud platform. And then follow these steps:
-    
-    1. Add Google cloud tool to eclipse. Follow this [tutorial]([https://www.youtube.com/watch?v=26hazpYOhPU&ab_channel=BrandonDonnelson]).
-    
+  
+    1. Add Google cloud tool to eclipse. Follow this [tutorial](https://www.youtube.com/watch?v=26hazpYOhPU&ab_channel=BrandonDonnelson).  
     2. Using the previous tool on eclipse, Create a new google cloud standard app.
-    
     3. Add the repos files to your project. And now you can start test and edit.
     
 ## Output
