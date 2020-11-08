@@ -3,13 +3,12 @@ Ball-Sort-Puzzle-Solver is a java based website to find and analyse solutions fo
 
 ## Getting started
 This website is built as google cloud platform application. To use it you need an acess to google cloud platform. And then follow these steps:
-  
     1. Add Google cloud tool to eclipse. Follow this [tutorial](https://www.youtube.com/watch?v=26hazpYOhPU&ab_channel=BrandonDonnelson).  
     2. Using the previous tool on eclipse, Create a new google cloud standard app.
     3. Add the repos files to your project. And now you can start test and edit.
     
 ## Output
-To see the output of this repository follow the google cloud host [link]([https://ball-sort-solver-283820.uc.r.appspot.com/]) of this repository.
+To see the output of this repository follow the google cloud host [link](https://ball-sort-solver-283820.uc.r.appspot.com/) of this repository.
 
 ## License
 Copyright (c) 2020 Antoun Wagdy.
